@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/template.html}">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <title>
+        Material Dashboard by Creative Tim
+    </title>
+
+</head>
+
+<body layout:fragment="content">
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-primary">
+                        <h4 class="card-title ">List Books</h4>
+                        <p class="card-category"> Here are list books</p>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Author</th>
+                                <th scope="col">Genre</th>
+                                <th scope="col">Publisher Name</th>
+                                </thead>
+                                <tbody>
+                                <tr th:each="book : ${books}">
+                                    <th scope="row" th:text="${book.id}"></th>
+                                    <td th:text="${book.name}"></td>
+                                    <td th:text="${book.author}"></td>
+                                    <td th:text="${book.genre}"></td>
+                                    <td th:text="${book.publishercatalog.name}"></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>
